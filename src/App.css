@@ -1,0 +1,23 @@
+@import "tailwindcss";
+
+@theme {
+  @keyframes defaultPageAnimationIn {
+    0% {
+      opacity: 0;
+      transform: translateY(2rem)
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0)
+    }
+  }
+  --animate-startPage: defaultPageAnimationIn 0.7s ease-in-out forwards;
+}
+
+body,
+#root {
+  @apply bg-white dark:bg-[#030713] text-gray-900 dark:text-white transition-colors duration-300;
+}
+
+/* aqui estamos definindo variantes customizadas */
+@custom-variant dark (&:where(.dark, .dark *));
